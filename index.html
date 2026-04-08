@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jamie Emmons — AI Transformation & Strategic Advisory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FAF7F2;--warm-white:#FFFDF9;--sand:#F0EBE1;--tan:#DDD4C4;--clay:#C4A882;--terra:#9E6B4A;--forest:#3D6B5C;--forest-light:#EBF2EF;--ink:#2A2420;--ink-mid:#5C4E45;--ink-light:#9C8E85}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;background:rgba(250,247,242,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(196,168,130,0.2);transition:box-shadow 0.3s}
+nav.scrolled{box-shadow:0 2px 20px rgba(42,36,32,0.08)}
+.nav-logo{font-family:'Lora',serif;font-size:1.15rem;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{font-size:0.875rem;font-weight:500;color:var(--ink-mid);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--terra)}
+.nav-cta{background:var(--forest)!important;color:#fff!important;padding:0.5rem 1.25rem;border-radius:999px}
+.nav-cta:hover{background:#2d5245!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--ink);border-radius:2px}
+.hero{min-height:100vh;display:flex;align-items:center;padding:8rem 3rem 5rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 80% 40%,rgba(61,107,92,0.07) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 20% 70%,rgba(196,168,130,0.12) 0%,transparent 60%);pointer-events:none}
+.hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--forest);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s 0.1s forwards}
+.hero-eyebrow::before{content:'';display:block;width:28px;height:1.5px;background:var(--forest)}
+h1{font-family:'Lora',serif;font-size:clamp(2.6rem,5vw,4rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s 0.2s forwards}
+h1 em{font-style:italic;color:var(--terra)}
+.hero-body{font-size:1.05rem;font-weight:300;color:var(--ink-mid);line-height:1.8;margin-bottom:2.5rem;max-width:480px;opacity:0;animation:fadeUp 0.8s 0.3s forwards}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp 0.8s 0.4s forwards}
+.btn-primary{background:var(--forest);color:#fff;padding:0.85rem 2rem;border-radius:999px;font-size:0.9rem;font-weight:500;text-decoration:none;transition:background 0.2s,transform 0.15s;display:inline-block}
+.btn-primary:hover{background:#2d5245;transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--ink);padding:0.85rem 2rem;border-radius:999px;font-size:0.9rem;font-weight:500;text-decoration:none;border:1.5px solid var(--tan);transition:border-color 0.2s,color 0.2s,transform 0.15s;display:inline-block}
+.btn-secondary:hover{border-color:var(--clay);color:var(--terra);transform:translateY(-1px)}
+.hero-visual{opacity:0;animation:fadeIn 1s 0.5s forwards}
+.hero-card-stack{position:relative;height:400px}
+.stat-card{position:absolute;background:var(--warm-white);border:1px solid var(--tan);border-radius:18px;padding:1.5rem 1.75rem;box-shadow:0 4px 32px rgba(42,36,32,0.07)}
+.stat-card:nth-child(1){top:0;left:0;width:220px;animation:float1 6s ease-in-out infinite}
+.stat-card:nth-child(2){top:80px;right:0;width:240px;animation:float2 7s ease-in-out infinite}
+.stat-card:nth-child(3){bottom:20px;left:30px;width:260px;animation:float3 5.5s ease-in-out infinite}
+.stat-num{font-family:'Lora',serif;font-size:2.4rem;color:var(--terra);display:block;line-height:1;margin-bottom:4px}
+.stat-label{font-size:0.8rem;font-weight:400;color:var(--ink-light)}
+.stat-icon{font-size:1.3rem;margin-bottom:0.6rem;display:block}
+section{padding:6rem 3rem}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{font-size:0.75rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--forest);margin-bottom:0.75rem;display:flex;align-items:center;gap:10px}
+.section-label::after{content:'';display:block;flex:1;max-width:40px;height:1.5px;background:var(--forest);opacity:0.4}
+h2{font-family:'Lora',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.2;color:var(--ink);margin-bottom:1rem}
+h2 em{font-style:italic;color:var(--terra)}
+.section-intro{font-size:1.05rem;font-weight:300;color:var(--ink-mid);line-height:1.8;max-width:580px;margin-bottom:3.5rem}
+#about{background:var(--warm-white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.about-text p{font-size:1rem;font-weight:300;color:var(--ink-mid);line-height:1.85;margin-bottom:1.25rem}
+.about-text p strong{font-weight:500;color:var(--ink)}
+.about-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:2rem}
+.pill{font-size:0.8rem;font-weight:500;padding:6px 14px;border-radius:999px;background:var(--forest-light);color:var(--forest);border:1px solid rgba(61,107,92,0.15)}
+.credentials-list{list-style:none}
+.credential-item{display:flex;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--sand);align-items:flex-start}
+.credential-item:last-child{border-bottom:none}
+.cred-year{font-size:0.75rem;font-weight:600;color:var(--ink-light);white-space:nowrap;padding-top:2px;min-width:50px}
+.cred-title{font-size:0.95rem;font-weight:500;color:var(--ink);margin-bottom:2px}
+.cred-sub{font-size:0.82rem;color:var(--ink-light)}
+#work{background:var(--cream)}
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.work-card{background:var(--warm-white);border:1px solid var(--tan);border-radius:18px;padding:2rem;position:relative;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s,border-color 0.25s}
+.work-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--forest),var(--clay));opacity:0;transition:opacity 0.25s}
+.work-card:hover{transform:translateY(-4px);box-shadow:0 12px 48px rgba(42,36,32,0.1);border-color:var(--clay)}
+.work-card:hover::before{opacity:1}
+.work-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+.work-industry{font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--forest);margin-bottom:0.75rem;display:flex;align-items:center;gap:6px}
+.work-industry-dot{width:6px;height:6px;border-radius:50%;background:var(--forest);display:inline-block}
+.work-title{font-family:'Lora',serif;font-size:1.3rem;font-weight:400;line-height:1.3;color:var(--ink);margin-bottom:0.85rem}
+.work-desc{font-size:0.9rem;font-weight:300;color:var(--ink-mid);line-height:1.75;margin-bottom:1.5rem}
+.work-metrics{display:flex;gap:1.5rem;flex-wrap:wrap}
+.work-metric-val{font-family:'Lora',serif;font-size:1.5rem;color:var(--terra);display:block;line-height:1.1}
+.work-metric-label{font-size:0.72rem;color:var(--ink-light);font-weight:400}
+.work-approach{background:var(--sand);border-radius:12px;padding:1.5rem}
+.work-approach-title{font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1rem}
+.work-approach ul{list-style:none}
+.work-approach li{font-size:0.88rem;color:var(--ink-mid);padding:0.4rem 0 0.4rem 1rem;position:relative;line-height:1.6}
+.work-approach li::before{content:'→';position:absolute;left:0;color:var(--forest);font-size:0.8rem}
+.insight-list{list-style:none;margin-top:1.25rem;background:var(--sand);border-radius:12px;padding:1.25rem}
+.insight-list-title{font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:0.85rem}
+.insight-list li{font-size:0.85rem;color:var(--ink-mid);padding:0.35rem 0 0.35rem 1rem;position:relative;line-height:1.6;border-bottom:1px solid rgba(196,168,130,0.2)}
+.insight-list li:last-child{border-bottom:none}
+.insight-list li::before{content:'→';position:absolute;left:0;color:var(--forest)}
+#ai{background:var(--ink);color:#fff}
+#ai .section-label{color:var(--clay)}
+#ai .section-label::after{background:var(--clay)}
+#ai h2{color:#fff}
+#ai h2 em{color:var(--clay)}
+#ai .section-intro{color:rgba(255,255,255,0.6)}
+.ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.ai-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:1.75rem;transition:background 0.2s,border-color 0.2s,transform 0.2s}
+.ai-card:hover{background:rgba(255,255,255,0.08);border-color:rgba(196,168,130,0.3);transform:translateY(-3px)}
+.ai-card-icon{width:44px;height:44px;border-radius:12px;background:rgba(61,107,92,0.3);display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1.1rem}
+.ai-card-title{font-size:1rem;font-weight:500;color:#fff;margin-bottom:0.6rem;line-height:1.3}
+.ai-card-desc{font-size:0.85rem;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:1.1rem}
+.ai-tools{display:flex;flex-wrap:wrap;gap:6px}
+.tool-tag{font-size:0.7rem;font-weight:500;padding:3px 10px;border-radius:999px;background:rgba(61,107,92,0.25);color:rgba(255,255,255,0.7);border:1px solid rgba(61,107,92,0.3)}
+#thinking{background:var(--warm-white)}
+.thinking-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.thought-card{background:var(--cream);border:1px solid var(--tan);border-radius:16px;padding:2rem;display:flex;flex-direction:column;transition:transform 0.2s,box-shadow 0.2s}
+.thought-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(42,36,32,0.08)}
+.thought-tag{font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra);margin-bottom:0.85rem}
+.thought-title{font-family:'Lora',serif;font-size:1.15rem;font-weight:400;line-height:1.35;color:var(--ink);margin-bottom:0.85rem}
+.thought-preview{font-size:0.875rem;font-weight:300;color:var(--ink-mid);line-height:1.75;flex:1;margin-bottom:1.5rem}
+.thought-read{font-size:0.82rem;font-weight:500;color:var(--forest);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:gap 0.2s}
+.thought-read:hover{gap:10px}
+#board{background:var(--forest);color:#fff;padding:6rem 3rem}
+.board-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1100px;margin:0 auto}
+#board .section-label{color:rgba(255,255,255,0.5)}
+#board .section-label::after{background:rgba(255,255,255,0.4)}
+#board h2{color:#fff}
+#board h2 em{color:var(--clay)}
+.board-desc{font-size:1rem;font-weight:300;color:rgba(255,255,255,0.7);line-height:1.85;margin-bottom:2rem}
+.board-role{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:999px;padding:0.6rem 1.2rem;font-size:0.85rem;font-weight:500;color:#fff;margin-bottom:2.5rem}
+.board-role-dot{width:8px;height:8px;border-radius:50%;background:#6fcfa8;animation:pulse 2s infinite}
+.board-visual{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:2.5rem}
+.board-visual-title{font-family:'Lora',serif;font-size:1.5rem;color:#fff;margin-bottom:0.5rem}
+.board-visual-sub{font-size:0.85rem;color:rgba(255,255,255,0.5);margin-bottom:2rem;font-weight:300}
+.board-pillars{display:flex;flex-direction:column;gap:1rem}
+.board-pillar{display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,0.05);border-radius:12px;padding:1rem 1.25rem}
+.board-pillar-icon{font-size:1.3rem;width:36px;text-align:center;flex-shrink:0}
+.board-pillar-text{font-size:0.875rem;color:rgba(255,255,255,0.75);font-weight:300;line-height:1.5}
+.board-pillar-text strong{color:#fff;font-weight:500}
+#contact{background:var(--cream);text-align:center}
+.contact-inner{max-width:640px;margin:0 auto}
+.contact-body{font-size:1rem;font-weight:300;color:var(--ink-mid);line-height:1.8;margin-bottom:2.5rem}
+.contact-links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.contact-link{display:inline-flex;align-items:center;gap:8px;font-size:0.9rem;font-weight:500;color:var(--forest);text-decoration:none;border:1.5px solid rgba(61,107,92,0.3);padding:0.7rem 1.5rem;border-radius:999px;transition:background 0.2s,border-color 0.2s,transform 0.15s}
+.contact-link:hover{background:var(--forest-light);border-color:var(--forest);transform:translateY(-2px)}
+footer{padding:2rem 3rem;border-top:1px solid var(--tan);display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;color:var(--ink-light);font-weight:300}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes float1{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-12px) rotate(-1deg)}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(1.5deg)}50%{transform:translateY(-16px) rotate(1.5deg)}}
+@keyframes float3{0%,100%{transform:translateY(0) rotate(-0.5deg)}50%{transform:translateY(-10px) rotate(-0.5deg)}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
+.reveal{opacity:1;transform:none;transition:opacity 0.7s,transform 0.7s}
+.js-loaded .reveal{opacity:0;transform:translateY(28px)}
+.js-loaded .reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:1.5rem;gap:1.25rem;border-bottom:1px solid var(--tan)}
+  .hamburger{display:flex}
+  section{padding:4rem 1.5rem}
+  .hero{padding:7rem 1.5rem 4rem}
+  .hero-inner,.about-grid,.board-inner{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .about-grid{gap:2.5rem}
+  .work-grid{grid-template-columns:1fr}
+  .work-card.featured{grid-column:1;display:block}
+  .work-approach{margin-top:1.5rem}
+  .ai-grid,.thinking-grid{grid-template-columns:1fr}
+  .board-inner{gap:2.5rem}
+  footer{flex-direction:column;gap:0.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="#" class="nav-logo">Jamie Emmons</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#ai">Building</a></li>
+    <li><a href="#thinking">Thinking</a></li>
+    <li><a href="#board">Grounded Minds</a></li>
+    <li><a href="#contact" class="nav-cta">Say hello</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">AI Adoption &amp; Strategic Advisory</div>
+      <h1>Where <em>transformation</em> meets human impact</h1>
+      <p class="hero-body">I help enterprise organizations translate complex technology into measurable outcomes &mdash; building the frameworks, relationships, and clarity that make AI adoption stick.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">See my work</a>
+        <a href="#contact" class="btn-secondary">Say hello</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="stat-card"><span class="stat-icon">&#128200;</span><span class="stat-num">$4M+</span><span class="stat-label">Enterprise portfolio managed</span></div>
+        <div class="stat-card"><span class="stat-icon">&#128260;</span><span class="stat-num">95%</span><span class="stat-label">Retention rate maintained</span></div>
+        <div class="stat-card"><span class="stat-icon">&#9889;</span><span class="stat-num">14+</span><span class="stat-label">Years driving transformation</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">About</div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <h2>Strategy, <em>story</em>, and the people in between</h2>
+        <p style="margin-top:1.5rem">I've spent 14+ years at the intersection of technology and human behavior &mdash; helping organizations not just <strong>implement</strong> AI and enterprise tools, but actually <strong>adopt and benefit from them</strong>.</p>
+        <p>Most transformation initiatives fall short not because the technology is wrong, but because the change layer is missing. I build that layer &mdash; from executive advisory and ROI storytelling to health scoring frameworks and customer enablement programs that scale.</p>
+        <p>Currently based in West Hartford, CT, I lead enterprise AI adoption programs for Fortune 500 organizations and serve as a founding board member of Grounded Minds, a nonprofit focused on AI awareness and responsible use in communities.</p>
+        <div class="about-pills">
+          <span class="pill">AI Adoption</span>
+          <span class="pill">Enterprise CS</span>
+          <span class="pill">Digital Transformation</span>
+          <span class="pill">Change Management</span>
+          <span class="pill">Executive Advisory</span>
+          <span class="pill">ROI Storytelling</span>
+          <span class="pill">Customer Enablement</span>
+          <span class="pill">IoT &amp; Sensors</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <ul class="credentials-list">
+          <li class="credential-item"><span class="cred-year">2025</span><div><div class="cred-title">Value Orchestrator Award</div><div class="cred-sub">Recognized for exceptional client outcomes driving a $1M+ expansion deal</div></div></li>
+          <li class="credential-item"><span class="cred-year">2025</span><div><div class="cred-title">M.S. Management &amp; Organizational Leadership</div><div class="cred-sub">Albertus Magnus College, New Haven, CT</div></div></li>
+          <li class="credential-item"><span class="cred-year">2024</span><div><div class="cred-title">Databricks Generative AI Fundamentals</div><div class="cred-sub">Certified practitioner</div></div></li>
+          <li class="credential-item"><span class="cred-year">2023</span><div><div class="cred-title">Warrior Award</div><div class="cred-sub">Recognized for resilience and consistent dedication to client success</div></div></li>
+          <li class="credential-item"><span class="cred-year">2012</span><div><div class="cred-title">B.S. Communications</div><div class="cred-sub">University of Massachusetts, Amherst &middot; Semester Abroad, Imperial College London</div></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="section-inner">
+    <div class="section-label">Work</div>
+    <h2>Impact that <em>compounds</em></h2>
+    <p class="section-intro">A selection of transformation initiatives across life sciences, insurance, and enterprise real estate. Client names are withheld to protect confidentiality.</p>
+    <div class="work-grid">
+
+      <div class="work-card featured reveal">
+        <div>
+          <div class="work-industry"><span class="work-industry-dot"></span>Enterprise SaaS &middot; AI-Powered Workplace Technology</div>
+          <div class="work-title">Building a scaled success program from the ground up</div>
+          <p class="work-desc">As the sole architect of a company's first enterprise-wide scaled success program, I designed every layer from scratch &mdash; frameworks, health scoring, onboarding flows, executive dashboards, and customer workshops &mdash; to serve 105 Fortune 500 accounts across a $4M+ portfolio with no prior infrastructure.</p>
+          <div class="work-metrics">
+            <div class="work-metric"><span class="work-metric-val">95%</span><span class="work-metric-label">Retention rate maintained</span></div>
+            <div class="work-metric"><span class="work-metric-val">$4M+</span><span class="work-metric-label">ARR portfolio</span></div>
+            <div class="work-metric"><span class="work-metric-val">12+</span><span class="work-metric-label">Qualified leads/quarter</span></div>
+            <div class="work-metric"><span class="work-metric-val">105</span><span class="work-metric-label">Enterprise accounts</span></div>
+          </div>
+        </div>
+        <div class="work-approach">
+          <div class="work-approach-title">How I approached it</div>
+          <ul>
+            <li>Leveraged health scoring automation to identify accounts needing immediate attention and those positioned for growth &mdash; enabling targeted, proactive engagement at scale</li>
+            <li>Creating and curating content to update the existing enablement hub with resources that are actually useful &mdash; video, guides, and a monthly newsletter customers look forward to</li>
+            <li>Launched tailored customer workshops built around topics that matter most, driving engagement and reinforcing product value</li>
+            <li>Managing the shared team inbox to ensure every customer question gets a thoughtful, timely answer</li>
+            <li>Part of a small internal team exploring automation and AI-powered workflows that genuinely move the needle and drive customer value</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="work-card reveal">
+        <div class="work-industry"><span class="work-industry-dot"></span>Life Sciences &middot; Global Pharmaceutical</div>
+        <div class="work-title">Turning occupancy intelligence into a global real estate strategy</div>
+        <p class="work-desc">Through strategic advisory and consultative guidance, I helped a global pharmaceutical company unpack and act on the data their occupancy platform was generating. By translating complex utilization insights into clear, executive-ready narratives, I gave their VP of Real Estate the confidence to move from pilot to full production &mdash; expanding the program to a portfolio-wide strategy spanning multiple continents.</p>
+        <div class="work-metrics" style="margin-bottom:1.25rem">
+          <div class="work-metric"><span class="work-metric-val">~$1M</span><span class="work-metric-label">TCV, pilot to production</span></div>
+          <div class="work-metric"><span class="work-metric-val">4,120</span><span class="work-metric-label">Hours unlocked in one quarter</span></div>
+          <div class="work-metric"><span class="work-metric-val">271K</span><span class="work-metric-label">Sq ft new coverage added</span></div>
+        </div>
+        <ul class="insight-list">
+          <div class="insight-list-title">Key outcomes</div>
+          <li>Converted a $100K/year conference room into four huddle pods &mdash; same footprint, dramatically more utility</li>
+          <li>67% of 39 biosafety cabinets used under 5 hrs/week &mdash; data made the case to repurpose vs. purchase, avoiding $800/SF lab buildout costs</li>
+          <li>Consistently low lab utilization (4% avg) enabled confident decisions to mothball underused labs &mdash; turning intuition into evidence-backed action</li>
+        </ul>
+      </div>
+
+      <div class="work-card reveal">
+        <div class="work-industry"><span class="work-industry-dot"></span>Insurance &middot; Hybrid Workplace Transformation</div>
+        <div class="work-title">Redesigning the office for a post-pandemic workforce</div>
+        <p class="work-desc">A major insurance organization needed to transform their headquarters to support hybrid work, improve employee satisfaction, and reduce their real estate footprint &mdash; without sacrificing function or experience. Sensor data made invisible patterns visible and guided every design decision.</p>
+        <div class="work-metrics" style="margin-bottom:1.25rem">
+          <div class="work-metric"><span class="work-metric-val">63%</span><span class="work-metric-label">Footprint reduction</span></div>
+          <div class="work-metric"><span class="work-metric-val">7</span><span class="work-metric-label">New flex rooms created</span></div>
+        </div>
+        <ul class="insight-list">
+          <div class="insight-list-title">What the data revealed</div>
+          <li>Most spaces used at under 25% capacity during business hours &mdash; validating the footprint reduction without employee impact</li>
+          <li>Regardless of room size, most meetings had only 2&ndash;3 attendees &mdash; driving a right-sizing strategy that converted underused areas into seven flex rooms</li>
+          <li>A beautifully designed community space used less than 5% of the time &mdash; sensor data surfaced what surveys couldn't and redirected investment where it was actually needed</li>
+        </ul>
+      </div>
+
+      <div class="work-card reveal">
+        <div class="work-industry"><span class="work-industry-dot"></span>Insurance &middot; IoT Risk Management</div>
+        <div class="work-title">Founding an IoT client success practice from scratch</div>
+        <p class="work-desc">As the founding IoT Client Success Manager at a global risk standards organization, I built scalable adoption frameworks and change management programs for enterprise clients implementing IoT for the first time. Designed cross-functional training that drove measurable usage and reduced operational risk across insurance providers and their customers.</p>
+        <div class="work-metrics">
+          <div class="work-metric"><span class="work-metric-val">4 yrs</span><span class="work-metric-label">Practice built &amp; led</span></div>
+          <div class="work-metric"><span class="work-metric-val">First</span><span class="work-metric-label">IoT CS function at org</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="ai">
+  <div class="section-inner">
+    <div class="section-label">Building</div>
+    <h2>Tools I <em>wish existed</em> &mdash; so I built them</h2>
+    <p class="section-intro">Beyond client work, I actively design and build programs, tools, and systems. The best way to guide organizations through transformation is to live it yourself.</p>
+    <div class="ai-grid">
+      <div class="ai-card reveal">
+        <div class="ai-card-icon">&#127891;</div>
+        <div class="ai-card-title">Customer enablement hub</div>
+        <p class="ai-card-desc">Creating and curating content to build out an enablement space that gives enterprise customers what they need between touchpoints &mdash; through video, guides, and a monthly newsletter. Also managing the shared team inbox so every question gets a timely, thoughtful answer.</p>
+        <div class="ai-tools"><span class="tool-tag">Content Strategy</span><span class="tool-tag">Video</span><span class="tool-tag">Newsletter</span><span class="tool-tag">Self-Service</span></div>
+      </div>
+      <div class="ai-card reveal">
+        <div class="ai-card-icon">&#127908;</div>
+        <div class="ai-card-title">Tailored customer workshops</div>
+        <p class="ai-card-desc">Hosting and facilitating workshops built around topics that matter most to each customer segment &mdash; creating space for customers to engage, ask questions, and connect the platform to their real-world goals. Designed to drive meaningful adoption, not just attendance.</p>
+        <div class="ai-tools"><span class="tool-tag">Workshop Facilitation</span><span class="tool-tag">Engagement Strategy</span><span class="tool-tag">Value Realization</span></div>
+      </div>
+      <div class="ai-card reveal">
+        <div class="ai-card-icon">&#129302;</div>
+        <div class="ai-card-title">AI engagement toolkit for CS teams</div>
+        <p class="ai-card-desc">Created a practical resource helping the CS team integrate AI into day-to-day work in ways that feel intentional &mdash; not overwhelming. Focused on building real habits through relevant, curated prompts and workflows that actually fit how the team operates.</p>
+        <div class="ai-tools"><span class="tool-tag">Claude</span><span class="tool-tag">OpenAI</span><span class="tool-tag">Prompt Engineering</span><span class="tool-tag">Team Enablement</span></div>
+      </div>
+      <div class="ai-card reveal">
+        <div class="ai-card-icon">&#128202;</div>
+        <div class="ai-card-title">Automated reporting &mdash; designed &amp; in progress</div>
+        <p class="ai-card-desc">Designed the wireframe and repeatable template architecture for a monthly automated reporting workflow &mdash; moving it from concept to a production-ready design. Now partnering with the AI team to build the automation layer that makes it truly hands-off each month.</p>
+        <div class="ai-tools"><span class="tool-tag">Power BI</span><span class="tool-tag">Wireframing</span><span class="tool-tag">Figma AI</span><span class="tool-tag">Automation (in progress)</span></div>
+      </div>
+      <div class="ai-card reveal">
+        <div class="ai-card-icon">&#9889;</div>
+        <div class="ai-card-title">Health scoring for smarter engagement</div>
+        <p class="ai-card-desc">Using health scoring automation to surface which accounts need immediate attention and which are primed for growth &mdash; turning a reactive process into a proactive one. Every outreach becomes more targeted, more timely, and more likely to land.</p>
+        <div class="ai-tools"><span class="tool-tag">Catalyst</span><span class="tool-tag">Health Scoring</span><span class="tool-tag">Proactive CS</span></div>
+      </div>
+      <div class="ai-card reveal">
+        <div class="ai-card-icon">&#129504;</div>
+        <div class="ai-card-title">Tools in my daily stack</div>
+        <p class="ai-card-desc">Staying hands-on across AI and enterprise tooling &mdash; actively experimenting, not just advising. If I'm going to help organizations adopt these tools, I need to know them from the inside.</p>
+        <div class="ai-tools"><span class="tool-tag">Claude</span><span class="tool-tag">OpenAI</span><span class="tool-tag">Gemini</span><span class="tool-tag">Catalyst</span><span class="tool-tag">Salesforce</span><span class="tool-tag">HubSpot</span><span class="tool-tag">Power BI</span><span class="tool-tag">Avoma</span><span class="tool-tag">Figma AI</span><span class="tool-tag">Jira</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="thinking">
+  <div class="section-inner">
+    <div class="section-label">Thinking</div>
+    <h2>Ideas worth <em>sharing</em></h2>
+    <p class="section-intro">Reflections on AI adoption, enterprise transformation, and the human side of change &mdash; written from real experience, not theory.</p>
+    <div class="thinking-grid">
+      <div class="thought-card reveal">
+        <div class="thought-tag">AI Adoption</div>
+        <div class="thought-title">Why most AI adoption fails before it starts</div>
+        <p class="thought-preview">The failure isn't in the technology &mdash; it's in the assumption that deploying AI is the same as adopting it. After three years guiding Fortune 500 organizations through transformation, the pattern is clear: companies invest in the tool and skip the change layer entirely...</p>
+        <a href="#contact" class="thought-read">Curious? Let's talk &rarr;</a>
+      </div>
+      <div class="thought-card reveal">
+        <div class="thought-tag">Customer Strategy</div>
+        <div class="thought-title">The ROI conversation nobody is having with their customers</div>
+        <p class="thought-preview">CS teams spend enormous energy on retention metrics and QBR decks &mdash; but rarely connect product usage directly to dollars saved or revenue generated. The framework I use to close that gap starts with one question nobody is asking...</p>
+        <a href="#contact" class="thought-read">Curious? Let's talk &rarr;</a>
+      </div>
+      <div class="thought-card reveal">
+        <div class="thought-tag">Leadership</div>
+        <div class="thought-title">Building zero-to-one programs as a team of one</div>
+        <p class="thought-preview">There's a particular kind of challenge that doesn't come with a playbook: being asked to build something that doesn't exist yet, with no team, no precedent, and full accountability for outcomes. I've done it twice &mdash; the lessons surprised me...</p>
+        <a href="#contact" class="thought-read">Curious? Let's talk &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="board">
+  <div class="board-inner">
+    <div class="reveal">
+      <div class="section-label">Board Leadership</div>
+      <h2>Grounded <em>Minds</em></h2>
+      <p class="board-desc">AI is changing everything &mdash; including how children and communities understand the world. I'm a founding board member and secretary of Grounded Minds, a nonprofit building AI awareness and responsible use from the ground up.</p>
+      <div class="board-role"><span class="board-role-dot"></span>Founding Board Member &amp; Secretary &middot; 2025&ndash;Present</div>
+      <p class="board-desc" style="margin-bottom:0">My core belief: technology should serve people, not the other way around. Grounded Minds is where that belief becomes action &mdash; especially for the next generation.</p>
+    </div>
+    <div class="board-visual reveal">
+      <div class="board-visual-title">What we're building</div>
+      <div class="board-visual-sub">Strategy, governance, and programs that make AI accessible to everyone</div>
+      <div class="board-pillars">
+        <div class="board-pillar"><span class="board-pillar-icon">&#127807;</span><span class="board-pillar-text"><strong>Community-first AI literacy</strong> &mdash; programs designed for real people in real communities, not just tech audiences</span></div>
+        <div class="board-pillar"><span class="board-pillar-icon">&#127963;</span><span class="board-pillar-text"><strong>Responsible governance</strong> &mdash; shaping early-stage organizational structure, board decisions, and strategic priorities</span></div>
+        <div class="board-pillar"><span class="board-pillar-icon">&#128103;</span><span class="board-pillar-text"><strong>Next generation focus</strong> &mdash; ensuring children grow up with the tools to think critically about AI in their lives</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-inner reveal">
+    <div class="section-label" style="justify-content:center">Let's connect</div>
+    <h2>Curious? <em>So am I.</em></h2>
+    <p class="contact-body">I'm always open to conversations about AI adoption, enterprise transformation, customer strategy, and the intersection of technology and human behavior. If something here resonated, I'd love to hear from you.</p>
+    <div class="contact-links">
+      <a href="mailto:jemmons132@gmail.com" class="contact-link">&#9993; jemmons132@gmail.com</a>
+      <a href="https://linkedin.com/in/jamie-emmons-b6590831" class="contact-link" target="_blank">&#128279; Connect on LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>&copy; 2026 Jamie Emmons</span>
+  <span>West Hartford, CT &middot; AI Transformation &amp; Strategic Advisory</span>
+</footer>
+
+<script>
+  var nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 40); });
+  function toggleMenu(){ document.getElementById('nav-links').classList.toggle('open'); }
+  document.querySelectorAll('.nav-links a').forEach(function(l){ l.addEventListener('click', function(){ document.getElementById('nav-links').classList.remove('open'); }); });
+  document.body.classList.add('js-loaded');
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry, i){
+      if(entry.isIntersecting){ setTimeout(function(){ entry.target.classList.add('visible'); }, i * 80); observer.unobserve(entry.target); }
+    });
+  }, {threshold: 0.05});
+  document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
+</script>
+</body>
+</html>
