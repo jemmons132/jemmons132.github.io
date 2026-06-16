@@ -24,7 +24,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(42,36,32,0.08)}
 .hamburger span{display:block;width:24px;height:2px;background:var(--ink);border-radius:2px}
 .hero{min-height:100vh;display:flex;align-items:center;padding:8rem 3rem 5rem;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 80% 40%,rgba(61,107,92,0.07) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 20% 70%,rgba(196,168,130,0.12) 0%,transparent 60%);pointer-events:none}
-.hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr;gap:2rem;align-items:start;max-width:720px}
+.hero-inner{width:100%;display:flex;flex-direction:column;gap:2rem;align-items:flex-start;max-width:720px;margin:0 auto}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--forest);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s 0.1s forwards}
 .hero-eyebrow::before{content:'';display:block;width:28px;height:1.5px;background:var(--forest)}
 h1{font-family:'Lora',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s 0.2s forwards}
@@ -197,8 +197,8 @@ footer{padding:2rem 3rem;border-top:1px solid var(--tan);display:flex;justify-co
     <div class="about-grid">
       <div class="about-text reveal">
         <h2>Strategy, <em>story</em>, and the people in between</h2>
-        <p style="margin-top:1.5rem">I've spent 14+ years at the intersection of technology and human behavior &mdash; with the last 10 focused on customer success. I've done the white-glove work: dedicated CSM, named account relationships, hands-on with every customer. And I've built the scaled version from scratch &mdash; 104 enterprise accounts, solo, with no playbook and no precedent.</p>
-        <p>Most scaled CS programs fail not because the technology is wrong, but because the human layer is missing. I build both &mdash; the frameworks, the automation, the AI workflows, and the judgment about when to put all of it down and pick up the phone.</p>
+        <p style="margin-top:1.5rem">I've spent 14+ years at the intersection of technology and human behavior; with the last 10 focused on customer success. I've done the white-glove work: dedicated CSM, named account relationships, hands-on with every customer. And I've built the scaled version from scratch &mdash; 104 enterprise accounts, solo, with no playbook and no precedent.</p>
+        <p>Most scaled CS programs fail not because the technology is wrong, but because the human layer is missing. I build both; the frameworks, the automation, the AI workflows, and the judgment about when to put all of it down and pick up the phone.</p>
         <p>Currently based in West Hartford, CT, I lead enterprise AI adoption programs for Fortune 500 organizations and serve as a founding board member of Grounded Minds, a nonprofit focused on AI awareness and responsible use in communities.</p>
         <div class="about-pills">
           <span class="pill">AI Adoption</span>
@@ -235,7 +235,7 @@ footer{padding:2rem 3rem;border-top:1px solid var(--tan);display:flex;justify-co
         <div>
           <div class="work-industry"><span class="work-industry-dot"></span>Enterprise SaaS &middot; AI-Powered Workplace Technology</div>
           <div class="work-title">Building a scaled success program from the ground up</div>
-          <p class="work-desc">In November 2025, I was handed a blank page and 104 enterprise accounts. No playbook, no precedent, no team. In 90 days the program was operational. In 7 months I had designed every layer from scratch &mdash; onboarding flows, health scoring, AI automation, proactive insights, and customer workshops &mdash; across a $4M+ portfolio of Fortune 500 accounts.</p>
+          <p class="work-desc">In November 2025, I was handed a blank page and 104 enterprise accounts. No playbook, no precedent, no team. In 90 days the program was operational. In 7 months I had designed every layer from scratch; onboarding flows, health scoring, AI automation, proactive insights, and customer workshops; across a $4M+ portfolio of Fortune 500 accounts.</p>
           <div class="work-metrics">
             <div class="work-metric"><span class="work-metric-val">$261K</span><span class="work-metric-label">Closed wins in 4 months</span></div>
             <div class="work-metric"><span class="work-metric-val">$4M+</span><span class="work-metric-label">ARR portfolio</span></div>
@@ -258,7 +258,7 @@ footer{padding:2rem 3rem;border-top:1px solid var(--tan);display:flex;justify-co
       <div class="work-card reveal">
         <div class="work-industry"><span class="work-industry-dot"></span>Life Sciences &middot; Global Pharmaceutical</div>
         <div class="work-title">Turning occupancy intelligence into a global real estate strategy</div>
-        <p class="work-desc">Through strategic advisory and consultative guidance, I helped a global pharmaceutical company unpack and act on the data their occupancy platform was generating. By translating complex utilization insights into clear, executive-ready narratives, I gave their VP of Real Estate the confidence to move from pilot to full production &mdash; expanding the program to a portfolio-wide strategy spanning multiple continents.</p>
+        <p class="work-desc">Through strategic advisory and consultative guidance, I helped a global pharmaceutical company unpack and act on the data their occupancy platform was generating. By translating complex utilization insights into clear, executive-ready narratives, I gave their VP of Real Estate the confidence to move from pilot to full production, expanding the program to a portfolio-wide strategy spanning multiple continents.</p>
         <div class="work-metrics" style="margin-bottom:1.25rem">
           <div class="work-metric"><span class="work-metric-val">~$1M</span><span class="work-metric-label">TCV, pilot to production</span></div>
           <div class="work-metric"><span class="work-metric-val">4,120</span><span class="work-metric-label">Hours unlocked in one quarter</span></div>
@@ -275,7 +275,7 @@ footer{padding:2rem 3rem;border-top:1px solid var(--tan);display:flex;justify-co
       <div class="work-card reveal">
         <div class="work-industry"><span class="work-industry-dot"></span>Insurance &middot; Hybrid Workplace Transformation</div>
         <div class="work-title">Redesigning the office for a post-pandemic workforce</div>
-        <p class="work-desc">A major insurance organization needed to transform their headquarters to support hybrid work, improve employee satisfaction, and reduce their real estate footprint &mdash; without sacrificing function or experience. Sensor data made invisible patterns visible and guided every design decision.</p>
+        <p class="work-desc">A major insurance organization needed to transform their headquarters to support hybrid work, improve employee satisfaction, and reduce their real estate footprint, without sacrificing function or experience. Sensor data made invisible patterns visible and guided every design decision.</p>
         <div class="work-metrics" style="margin-bottom:1.25rem">
           <div class="work-metric"><span class="work-metric-val">63%</span><span class="work-metric-label">Footprint reduction</span></div>
           <div class="work-metric"><span class="work-metric-val">7</span><span class="work-metric-label">New flex rooms created</span></div>
@@ -311,19 +311,19 @@ footer{padding:2rem 3rem;border-top:1px solid var(--tan);display:flex;justify-co
       <div class="ai-card reveal">
         <div class="ai-card-icon">&#127891;</div>
         <div class="ai-card-title">Customer enablement hub</div>
-        <p class="ai-card-desc">Creating and curating content to build out an enablement space that gives enterprise customers what they need between touchpoints &mdash; through video, guides, and a monthly newsletter. Also managing the shared team inbox so every question gets a timely, thoughtful answer.</p>
+        <p class="ai-card-desc">Creating and curating content to build out an enablement space that gives enterprise customers what they need between touchpoints through video, guides, and a monthly newsletter. Also managing the shared team inbox so every question gets a timely, thoughtful answer.</p>
         <div class="ai-tools"><span class="tool-tag">Content Strategy</span><span class="tool-tag">Video</span><span class="tool-tag">Newsletter</span><span class="tool-tag">Self-Service</span></div>
       </div>
       <div class="ai-card reveal">
         <div class="ai-card-icon">&#127908;</div>
         <div class="ai-card-title">Tailored customer workshops</div>
-        <p class="ai-card-desc">Hosting and facilitating workshops built around topics that matter most to each customer segment &mdash; creating space for customers to engage, ask questions, and connect the platform to their real-world goals. Designed to drive meaningful adoption, not just attendance.</p>
+        <p class="ai-card-desc">Hosting and facilitating workshops built around topics that matter most to each customer segment , creating space for customers to engage, ask questions, and connect the platform to their real-world goals. Designed to drive meaningful adoption, not just attendance.</p>
         <div class="ai-tools"><span class="tool-tag">Workshop Facilitation</span><span class="tool-tag">Engagement Strategy</span><span class="tool-tag">Value Realization</span></div>
       </div>
       <div class="ai-card reveal">
         <div class="ai-card-icon">&#129302;</div>
         <div class="ai-card-title">AI engagement toolkit for CS teams</div>
-        <p class="ai-card-desc">Created a practical resource helping the CS team integrate AI into day-to-day work in ways that feel intentional &mdash; not overwhelming. Focused on building real habits through relevant, curated prompts and workflows that actually fit how the team operates.</p>
+        <p class="ai-card-desc">Created a practical resource helping the CS team integrate AI into day-to-day work in ways that feel intentional, not overwhelming. Focused on building real habits through relevant, curated prompts and workflows that actually fit how the team operates.</p>
         <div class="ai-tools"><span class="tool-tag">Claude</span><span class="tool-tag">OpenAI</span><span class="tool-tag">Prompt Engineering</span><span class="tool-tag">Team Enablement</span></div>
       </div>
       <div class="ai-card reveal">
@@ -335,19 +335,19 @@ footer{padding:2rem 3rem;border-top:1px solid var(--tan);display:flex;justify-co
       <div class="ai-card reveal">
         <div class="ai-card-icon">&#9889;</div>
         <div class="ai-card-title">Health scoring for smarter engagement</div>
-        <p class="ai-card-desc">Using health scoring automation to surface which accounts need immediate attention and which are primed for growth &mdash; turning a reactive process into a proactive one. Every outreach becomes more targeted, more timely, and more likely to land.</p>
+        <p class="ai-card-desc">Using health scoring automation to surface which accounts need immediate attention and which are primed for growth, turning a reactive process into a proactive one. Every outreach becomes more targeted, more timely, and more likely to land.</p>
         <div class="ai-tools"><span class="tool-tag">Catalyst</span><span class="tool-tag">Health Scoring</span><span class="tool-tag">Proactive CS</span></div>
       </div>
       <div class="ai-card reveal">
         <div class="ai-card-icon">&#128214;</div>
         <div class="ai-card-title">From Zero to Scaled &mdash; The Playbook</div>
-        <p class="ai-card-desc">Everything I built, learned, and figured out the hard way &mdash; documented in a comprehensive practitioner's guide to building a scaled CS program from scratch. 17 chapters, real frameworks, real stories, real proof points. Written for the CS leader, founder, or solo CSM who needs a map.</p>
+        <p class="ai-card-desc">Everything I built, learned, and figured out the hard way, documented in a comprehensive practitioner's guide to building a scaled CS program from scratch. 17 chapters, real frameworks, real stories, real proof points. Written for the CS leader, founder, or solo CSM who needs a map.</p>
         <div class="ai-tools"><span class="tool-tag">Scaled CS</span><span class="tool-tag">AI Automation</span><span class="tool-tag">Playbook</span><span class="tool-tag">Available now</span></div>
       </div>
       <div class="ai-card reveal">
         <div class="ai-card-icon">&#129504;</div>
         <div class="ai-card-title">Tools in my daily stack</div>
-        <p class="ai-card-desc">Staying hands-on across AI and enterprise tooling &mdash; actively experimenting, not just advising. If I'm going to help organizations adopt these tools, I need to know them from the inside.</p>
+        <p class="ai-card-desc">Staying hands-on across AI and enterprise tooling; actively experimenting, not just advising. If I'm going to help organizations adopt these tools, I need to know them from the inside.</p>
         <div class="ai-tools"><span class="tool-tag">Claude</span><span class="tool-tag">OpenAI</span><span class="tool-tag">Gemini</span><span class="tool-tag">Catalyst</span><span class="tool-tag">Salesforce</span><span class="tool-tag">HubSpot</span><span class="tool-tag">Power BI</span><span class="tool-tag">Avoma</span><span class="tool-tag">Figma AI</span><span class="tool-tag">Jira</span></div>
       </div>
     </div>
@@ -359,9 +359,9 @@ footer{padding:2rem 3rem;border-top:1px solid var(--tan);display:flex;justify-co
     <div class="reveal">
       <div class="section-label">Board Leadership</div>
       <h2>Grounded <em>Minds</em></h2>
-      <p class="board-desc">AI is changing everything &mdash; including how children and communities understand the world. I'm a founding board member and secretary of Grounded Minds, a nonprofit building AI awareness and responsible use from the ground up.</p>
+      <p class="board-desc">AI is changing everything, including how children and communities understand the world. I'm a founding board member and secretary of Grounded Minds, a nonprofit building AI awareness and responsible use from the ground up.</p>
       <div class="board-role"><span class="board-role-dot"></span>Founding Board Member &amp; Secretary &middot; 2025&ndash;Present</div>
-      <p class="board-desc" style="margin-bottom:0">My core belief: technology should serve people, not the other way around. Grounded Minds is where that belief becomes action &mdash; especially for the next generation.</p>
+      <p class="board-desc" style="margin-bottom:0">My core belief: technology should serve people, not the other way around. Grounded Minds is where that belief becomes action, especially for the next generation.</p>
     </div>
     <div class="board-visual reveal">
       <div class="board-visual-title">What we're building</div>
@@ -379,7 +379,7 @@ footer{padding:2rem 3rem;border-top:1px solid var(--tan);display:flex;justify-co
   <div class="contact-inner reveal">
     <div class="section-label" style="justify-content:center">Let's connect</div>
     <h2>Curious? <em>So am I.</em></h2>
-    <p class="contact-body">I'm always open to conversations about scaled CS, AI automation, customer strategy, and building programs that actually work. If something here resonated &mdash; or you're building something and need a thought partner &mdash; I'd love to hear from you.</p>
+    <p class="contact-body">I'm always open to conversations about scaled CS, AI automation, customer strategy, and building programs that actually work. If something here resonated, or you're building something and need a thought partner, I'd love to hear from you.</p>
     <div class="contact-links">
       <a href="mailto:jemmons132@gmail.com" class="contact-link">&#9993; jemmons132@gmail.com</a>
       <a href="https://linkedin.com/in/jamie-emmons-b6590831" class="contact-link" target="_blank">&#128279; Connect on LinkedIn</a>
