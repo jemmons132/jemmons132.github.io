@@ -24,10 +24,10 @@ nav.scrolled{box-shadow:0 2px 20px rgba(42,36,32,0.08)}
 .hamburger span{display:block;width:24px;height:2px;background:var(--ink);border-radius:2px}
 .hero{min-height:100vh;display:flex;align-items:center;padding:8rem 3rem 5rem;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 80% 40%,rgba(61,107,92,0.07) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 20% 70%,rgba(196,168,130,0.12) 0%,transparent 60%);pointer-events:none}
-.hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr;gap:2rem;align-items:start;max-width:720px}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--forest);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s 0.1s forwards}
 .hero-eyebrow::before{content:'';display:block;width:28px;height:1.5px;background:var(--forest)}
-h1{font-family:'Lora',serif;font-size:clamp(2.6rem,5vw,4rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s 0.2s forwards}
+h1{font-family:'Lora',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s 0.2s forwards}
 h1 em{font-style:italic;color:var(--terra)}
 .hero-body{font-size:1.05rem;font-weight:300;color:var(--ink-mid);line-height:1.8;margin-bottom:2.5rem;max-width:480px;opacity:0;animation:fadeUp 0.8s 0.3s forwards}
 .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp 0.8s 0.4s forwards}
@@ -35,15 +35,10 @@ h1 em{font-style:italic;color:var(--terra)}
 .btn-primary:hover{background:#2d5245;transform:translateY(-1px)}
 .btn-secondary{background:transparent;color:var(--ink);padding:0.85rem 2rem;border-radius:999px;font-size:0.9rem;font-weight:500;text-decoration:none;border:1.5px solid var(--tan);transition:border-color 0.2s,color 0.2s,transform 0.15s;display:inline-block}
 .btn-secondary:hover{border-color:var(--clay);color:var(--terra);transform:translateY(-1px)}
-.hero-visual{opacity:0;animation:fadeIn 1s 0.5s forwards}
-.hero-card-stack{position:relative;height:400px}
-.stat-card{position:absolute;background:var(--warm-white);border:1px solid var(--tan);border-radius:18px;padding:1.5rem 1.75rem;box-shadow:0 4px 32px rgba(42,36,32,0.07)}
-.stat-card:nth-child(1){top:0;left:0;width:220px;animation:float1 6s ease-in-out infinite}
-.stat-card:nth-child(2){top:80px;right:0;width:240px;animation:float2 7s ease-in-out infinite}
-.stat-card:nth-child(3){bottom:20px;left:30px;width:260px;animation:float3 5.5s ease-in-out infinite}
-.stat-num{font-family:'Lora',serif;font-size:2.4rem;color:var(--terra);display:block;line-height:1;margin-bottom:4px}
-.stat-label{font-size:0.8rem;font-weight:400;color:var(--ink-light)}
-.stat-icon{font-size:1.3rem;margin-bottom:0.6rem;display:block}
+.hero-stats-row{display:flex;gap:2.5rem;flex-wrap:wrap;margin-top:2.5rem;opacity:0;animation:fadeUp 0.8s 0.5s forwards}
+.hero-stat{display:flex;flex-direction:column;gap:4px}
+.hero-stat-num{font-family:'Lora',serif;font-size:2rem;color:var(--terra);line-height:1}
+.hero-stat-label{font-size:0.78rem;font-weight:400;color:var(--ink-light);max-width:140px;line-height:1.4}
 section{padding:6rem 3rem}
 .section-inner{max-width:1100px;margin:0 auto}
 .section-label{font-size:0.75rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--forest);margin-bottom:0.75rem;display:flex;align-items:center;gap:10px}
@@ -187,13 +182,11 @@ footer{padding:2rem 3rem;border-top:1px solid var(--tan);display:flex;justify-co
         <a href="#contact" class="btn-secondary">Say hello</a>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-card-stack">
-        <div class="stat-card"><span class="stat-icon">&#128200;</span><span class="stat-num">$4M+</span><span class="stat-label">Enterprise portfolio managed</span></div>
-        <div class="sta<div class="stat-card"><span class="stat-icon">&#127942;</span><span class="stat-num">$261K</span><span class="stat-label">In closed wins — first quarter in the role</span></div>
-        <div class="stat-card"><span class="stat-icon">&#9889;</span><span class="stat-num">14+</span><span class="stat-label">Years of enterprise CS and transformation experience
-</span></div>
-      </div>
+        <div class="hero-stats-row">
+      <div class="hero-stat"><span class="hero-stat-num">$4M+</span><span class="hero-stat-label">Enterprise portfolio managed solo</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">$261K</span><span class="hero-stat-label">In closed wins — first quarter in the role</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">14+</span><span class="hero-stat-label">Years in enterprise CS</span></div>
+    </div>
     </div>
   </div>
 </section>
